@@ -10,12 +10,21 @@ const queryClient = new QueryClient();
 function Router() {
   return (
     <Switch>
+      {/* Auth routes */}
       <Route path="/auth" component={AuthPage} />
       <Route path="/login" component={AuthPage} />
+
+      {/* OAuth callback route */}
       <Route path="/oauth-success" component={OAuthSuccessPage} />
+
+      {/* Main app */}
       <Route path="/" component={WorkspacePage} />
+
+      {/* Fallback route */}
       <Route>
-        <div className="flex min-h-screen items-center justify-center text-emerald-900">Page not found</div>
+        <div className="flex min-h-screen items-center justify-center text-emerald-900">
+          Page not found
+        </div>
       </Route>
     </Switch>
   );
